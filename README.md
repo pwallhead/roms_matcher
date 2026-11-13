@@ -1,5 +1,5 @@
 This code enables efficient 4D interpolation of ROMS model output to an arbitrary set of observed locations/times.
-Coastward extrapolation is strictly forbidden; vertical extrapolation (above or below) is allowed but flagged.
+Coastward extrapolation is strictly forbidden; vertical extrapolation (above or below) is allowed but flagged (flag value 1 or 2).
 
 The algorithm proceeds by identifying a set of model grid point squares (from 4 rho points) that enclose observed locations.  
 Land mask points are deliberately included, such that interpolated values for any observations with a land mask point in the surrounding square will be returned as NaN (thus forbidding coastward extrapolation).
