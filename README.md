@@ -2,7 +2,7 @@ This code enables efficient 4D interpolation of ROMS model output to an arbitrar
 Coastward extrapolation is strictly forbidden; vertical extrapolation (above or below) is allowed but flagged (flag value 1 or 2).
 
 The algorithm proceeds by identifying a set of model grid point squares (from 4 rho points) that enclose observed locations.  
-Land mask points are deliberately included, such that interpolated values for any observations with a land mask point in the surrounding square will be returned as NaN (thus forbidding coastward extrapolation).
+Interpolated values for any observations with a land mask point in the surrounding square will be returned as NaN.
 For each sampled square we loop over enclosed observations, and for each observation: 
 1) interpolate in 2D (t,z) to the observed (time, depth) for each of the 4 enclosing model water columns,
 2) finally interpolate in 2D (x,y) the values from step (1) to the observed horizontal location.
